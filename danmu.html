@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #a3 {
+            width: 700px;
+            height: 500px;
+            border: 1px solid #000;
+            position: relative;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        p {
+            padding: 0px;
+            margin: 0px;
+            position: absolute;
+            right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="a3">
+    </div>
+
+    <div style="text-align: center; width: 700px;
+    height: 500px;">
+        <input type="text" id="a1"><br>
+        <button id="a2">biubiubiu</button>
+        <button id="a4">清屏</button>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+             
+            $('#a2').click(function () {
+                var q = Math.round(Math.random() * 430);
+                var r = Math.round(Math.random() * 249);
+                var b = Math.round(Math.random() * 249);
+                var g = Math.round(Math.random() * 249);
+                var si = Math.round(Math.random() * 70);
+                var elapse = Math.round(Math.random() * 5000);
+                var el=$('<p class="a6">'+ $('#a1').val() + '</p>');
+                el.css('top',q + 'px');
+                el.css('color','rgba('+r+","+b+','+g+')');
+                el.css('font-size',si+'px');
+                el.animate({right: $('#a3').width()},elapse);
+                $('#a3').append(el);
+            });
+            document.onkeydown = function(){
+                if(event.keyCode == "13"){
+                var q = Math.round(Math.random() * 430);
+                var r = Math.round(Math.random() * 249);
+                var b = Math.round(Math.random() * 249);
+                var g = Math.round(Math.random() * 249);
+                var si = Math.round(Math.random() * 70);
+                var elapse = Math.round(Math.random() * 5000);
+                var el=$('<p class="a6">'+ $('#a1').val() + '</p>');
+                el.css('top',q + 'px');
+                el.css('color','rgba('+r+","+b+','+g+')');
+                el.css('font-size',si+'px');
+                el.animate({right: $('#a3').width()},elapse);
+                $('#a3').append(el);
+                }
+            }
+        $('#a4').click(function () {
+            $('#a3').empty();
+        });
+    </script>
+</body>
+
+</html>
